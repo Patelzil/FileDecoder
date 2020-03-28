@@ -15,7 +15,7 @@ class Hashable
      */
     hashVal()
     {
-        throw new Error("Missing hashVal in subclass");
+        throw new Error("Missing hashVal function in subclass");
     }// end hashVal
 
     /* equals

@@ -8,13 +8,26 @@ class LinkedList
     constructor() 
     {
         this.#_head = null;
-    }
+    }// end constructor
 
-    add (something) 
+    /*insert
+     *Purpose - insert at the front of the linked list
+     *@param data - item to be inserted
+     */
+    insert(data) 
     { 
-        this.#_head = new Node ( something, this.#_head);
-    }
+        this.#_head = new Node ( data, this.#_head);
+    }// end insert
     
+    /*search
+     *Purpose - search for the item in the linked list
+     *@param data - item to be searched
+     */
+    search(data)
+    {
+        
+    }// end search
+
     print() 
     { 
         let out = "[";

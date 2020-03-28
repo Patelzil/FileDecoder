@@ -19,7 +19,7 @@ class KeyValueHash extends Hashable
     get key()
     {
         return this.key;
-    }// end value
+    }// end key (accessor)
 
     /* hashVal
      * Purpose - returns hash value to be used for insertion
