@@ -18,7 +18,16 @@ class StringHash extends Hashable
      */
     hashVal()
     {
-        return this.intVal;
+        let size = this.strVal.length;
+        let value = -1; // return value
+        let prime = 13; // a prime number of my choice
+
+        for(let i = 0; i < size; i++)
+        {
+            value += this.strVal.charCodeAt(i)*Math.pow(prime,(size-(i+1)));
+        }
+
+        return value;
     }// end hashVal
 
     /* equals
