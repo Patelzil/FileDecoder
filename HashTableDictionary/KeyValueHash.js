@@ -22,10 +22,10 @@ class KeyValueHash extends Hashable
         return this.key;
     }// end keyValue (accessor)
 
-    // set key(newKey)
-    // {
-    //     this.key = newKey;
-    // }
+    set val(newKey)
+    {
+        this.value = newKey;
+    }
 
     /* hashVal
      * Purpose - returns hash value to be used for insertion
