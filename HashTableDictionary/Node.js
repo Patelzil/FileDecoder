@@ -19,6 +19,11 @@ class Node
         return this.#_next;
     }
 
+    set next(theNext)
+    {
+        this.#_next = theNext;
+    }
+
 }
 
 module.exports = Node;
