@@ -25,8 +25,45 @@ class LinkedList
      */
     search(data)
     {
-        
+        let curr = this.#_head;
+
+        while(curr != null && !curr.value.equals(data))
+        {
+            curr = curr.next;
+        }
+
+        return curr;
     }// end search
+
+    /*delete
+     *Purpose - delete/remove data from the linked list
+     *@param data - item to be deleted
+     */
+    delete(data)
+    {
+        let prev = null;
+        let curr = this.#_head;
+
+        // search for the key
+        while((curr != null) && !(curr.value.equals(data)))
+        {
+            prev = curr;
+            curr = curr.next;
+        }
+
+        // now delete
+        if(curr != null) // found the value we want
+        {
+            if(prev != null)
+            {
+                prev.next = curr.next;
+            }
+            else
+            {
+                this.#_head = curr.next;
+            }
+        }
+    }// end delete
 
     print() 
     { 
