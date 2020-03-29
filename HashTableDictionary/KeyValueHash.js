@@ -8,8 +8,8 @@ class KeyValueHash extends Hashable
         if(key instanceof Hashable) // create KeyValueHash only if the key is of hashable type
         {
             super();
-            this.key = key;
-            this.value = value;
+            this._key = key;
+            this._value = value;
         }
         else
         {
@@ -17,14 +17,19 @@ class KeyValueHash extends Hashable
         }
     }// end constructor
 
-    get keyValue()
+    get key()
     {
-        return this.key;
+        return this._key;
     }// end keyValue (accessor)
+
+    get value()
+    {
+        return this._value;
+    }
 
     set val(newKey)
     {
-        this.value = newKey;
+        this._value = newKey;
     }
 
     /* hashVal
@@ -45,7 +50,7 @@ class KeyValueHash extends Hashable
         let isEqual;
         if(x instanceof KeyValueHash)
         {
-            isEqual = this.key === x.keyValue; // equal if the keys are both the same
+            isEqual = this.key === x.key; // equal if the keys are both the same
         }
         else
         {
