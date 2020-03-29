@@ -1,4 +1,5 @@
 'use strict';
+let Hashable = require('./Hashable');
 
 class StringHash extends Hashable
 {

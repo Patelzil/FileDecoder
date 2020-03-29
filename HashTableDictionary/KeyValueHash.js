@@ -1,4 +1,5 @@
 'use strict';
+let Hashable = require('./Hashable');
 
 class KeyValueHash extends Hashable
 {
@@ -16,10 +17,15 @@ class KeyValueHash extends Hashable
         }
     }// end constructor
 
-    get key()
+    get keyValue()
     {
         return this.key;
-    }// end key (accessor)
+    }// end keyValue (accessor)
+
+    // set key(newKey)
+    // {
+    //     this.key = newKey;
+    // }
 
     /* hashVal
      * Purpose - returns hash value to be used for insertion
@@ -38,7 +44,7 @@ class KeyValueHash extends Hashable
     {
         if(x instanceof KeyValueHash)
         {
-            return this.key === x.key; // equal if the keys are both the same
+            return this.key === x.keyValue; // equal if the keys are both the same
         }
     }// end equals
 }// end class
