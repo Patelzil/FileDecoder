@@ -29,10 +29,16 @@ class IntHash extends Hashable
      */
     equals(x)
     {
+        let isEqual;
         if(x instanceof IntHash)
         {
-            return this.value === x.value;
+            isEqual = this.value === x.value;
         }
+        else
+        {
+            isEqual = false;
+        }
+        return isEqual;
     }// end equals
 }// end class
 

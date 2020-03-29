@@ -42,10 +42,16 @@ class KeyValueHash extends Hashable
      */
     equals(x)
     {
+        let isEqual;
         if(x instanceof KeyValueHash)
         {
-            return this.key === x.keyValue; // equal if the keys are both the same
+            isEqual = this.key === x.keyValue; // equal if the keys are both the same
         }
+        else
+        {
+            isEqual = false;
+        }
+        return isEqual;
     }// end equals
 }// end class
 

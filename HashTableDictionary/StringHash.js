@@ -38,10 +38,16 @@ class StringHash extends Hashable
      */
     equals(x)
     {
+        let isEqual;
         if(x instanceof StringHash)
         {
-            return this.value === x.value;
+            isEqual = this.value === x.value;
         }
+        else
+        {
+            isEqual = false;
+        }
+        return isEqual;
     }// end equals
 }// end class
 
