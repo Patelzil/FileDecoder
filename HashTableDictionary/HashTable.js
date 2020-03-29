@@ -50,7 +50,7 @@ class HashTable
             }
             else
             {
-                return myValue;
+                return myValue.value;
             }
         }
         else
@@ -108,9 +108,11 @@ class HashTable
     {
         let empty = true;
         let i=0;
+        
         while(empty && (i< this.#_myArray.length))
         {
             empty = this.#_myArray[i].isEmpty();
+            i++;
         }
 
         return empty;
