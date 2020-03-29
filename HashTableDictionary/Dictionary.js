@@ -41,7 +41,21 @@ class Dictionary
      */
     get(k)
     {
-
+        if(k instanceof hashable)
+        {
+            if(this._table.contains(x))
+            {
+                return this._table.get(x).value;
+            }
+            else
+            {
+                throw new Error("Key not found.");
+            }
+        }
+        else
+        {
+            throw new Error("Key should be of type hashable.");
+        }
     }// end get
 
     /*contains
@@ -50,7 +64,19 @@ class Dictionary
      */
     contains(x)
     {
-
+        let isThere = false;
+        if(k instanceof hashable)
+        {
+            if(this._table.contains(x))
+            {
+                isThere = true;
+            }
+        }
+        else
+        {
+            throw new Error("Key should be of type hashable.");
+        }
+        return isThere;
     }// end contains
 
     /* isEmpty
@@ -58,7 +84,7 @@ class Dictionary
      */
     isEmpty()
     {
-
+        return this._table.isEmpty();
     }// end isEmpty
 }// end class
 
