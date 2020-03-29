@@ -1,5 +1,6 @@
 'use strict';
 let LinkedList = require('./LinkedList.js');
+let Hashable = require('./Hashable.js');
 
 class HashTable
 {
@@ -21,16 +22,41 @@ class HashTable
      */
     add(x)
     {
-
+        if(x instanceof Hashable)
+        {
+            let index = x.hashVal() % this.#_myArray.length;
+            this.#_myArray[index].insert(x); // insert into the linked list at the index calculated above
+        }
+        else
+        {
+            throw new Error("Item not of type hashable");
+        }
     }// end add
 
     /* get
-     * Purpose - eturns the first occurrence equal to x in the hash table
+     * Purpose - returns the first occurrence equal to x in the hash table
      * @param x - hashable object to be returned from the table 
      */
     get(x)
     {
+        if(x instanceof Hashable)
+        {
+            let index = x.hashVal() % this.#_myArray.length;
+            let myValue = this.#_myArray[index].search(x);
 
+            if(myValue ==  null)
+            {
+                throw new Error("Item searched not found in the table.");
+            }
+            else
+            {
+                return myValue;
+            }
+        }
+        else
+        {
+            throw new Error("Trying to access non-hashable item.");
+        }
     }// end get
 
     /* remove
@@ -39,16 +65,40 @@ class HashTable
      */
     remove(x)
     {
-
+        if(x instanceof Hashable)
+        {
+            let index = x.hashVal() % this.#_myArray.length;
+            this.#_myArray[index].delete(x);
+        }
+        else
+        {
+            throw new Error("Trying to remove non-hashable item.");
+        }
     }// end remove
 
     /* contains
-     * Purpose -
+     * Purpose - determines if x is in the table
      * @param x - hashable object to be searched for from the table 
      */
     contains(x)
     {
+        let isContains = false;
+        if(x instanceof Hashable)
+        {
+            let index = x.hashVal() % this.#_myArray.length;
+            let data = this.#_myArray[index].search(x);
 
+            if(data != null) // value found
+            {
+                isContains = true;
+            }
+        }
+        else
+        {
+            throw new Error("Searching for a non-hashable item.");
+        }
+
+        return isContains;
     }// end contains
 
     /* isEmpty
@@ -56,7 +106,14 @@ class HashTable
      */
     isEmpty()
     {
+        let empty = true;
+        let i=0;
+        while(empty && (i< this.#_myArray.length))
+        {
+            empty = this.#_myArray[i].isEmpty();
+        }
 
+        return empty;
     }// end isEmpty
 }// end class
 
