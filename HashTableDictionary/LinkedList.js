@@ -65,6 +65,14 @@ class LinkedList
         }
     }// end delete
 
+    /*isEmpty
+     *Purpose - returns true if the linked list is empty
+     */
+    isEmpty()
+    {
+        return this.#_head == null;
+    }
+
     print() 
     { 
         let out = "[";
