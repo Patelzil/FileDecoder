@@ -4,6 +4,7 @@ let HashTable = require('./HashTable.js');
 let Int = require('./IntHash.js');
 let String = require('./StringHash.js');
 let keyValue = require('./KeyValueHash.js');
+let dictionary = require('./Dictionary.js');
 
 function testAdd()
 {
@@ -115,8 +116,8 @@ function testContains()
     testTable.add(testVal1);
     testTable.add(testVal2);
 
-    assert(testTable.contains(testVal1), "Should not contain testVal1.");
-    assert(testTable.contains(testVal2), "Should not contain testVal2.");
+    assert(testTable.contains(testVal1), "Should contain testVal1.");
+    assert(testTable.contains(testVal2), "Should contain testVal2.");
 
     testTable.remove(testVal2);
 
@@ -146,6 +147,35 @@ function testIsEmpty()
     console.log("\tTest (isEmpty method) passed.");
 }// end testIsEmpty
 
+function testDictionary()
+{
+    console.log("Testing dictionary...");
+
+    let testDictionary = new dictionary();
+    let testKey1 = new String("z")
+    let testKey2 = new Int(18);
+
+    assert(testDictionary.isEmpty(), "Dictionary should be empty.");
+
+    testDictionary.put(testKey1,12);
+    testDictionary.put(testKey2,13);
+
+    assert(!testDictionary.isEmpty(), "Dictionary should not be empty.");
+
+    console.log("\tTest (put method) passed.");
+    console.log("\tTest (isEmpty method) Passed.");
+
+    assert(testDictionary.contains(testKey1), "Should contain testKey1");
+    assert(testDictionary.contains(testKey2), "Should contain testKey2");
+
+    console.log("\tTest (contains method) Passed.");
+
+    assert(testDictionary.get(testKey1) == 12, "Should be equal to 12.");
+    assert(testDictionary.get(testKey2) == 13, "Should be equal to 13.");
+    
+    console.log("\tTest (get method) Passed.");
+}// end testDictionary
+
 function main()
 {
     testAdd();
@@ -153,6 +183,7 @@ function main()
     testRemove();
     testContains();
     testIsEmpty();
+    testDictionary();
 }// end main
 
 main();
