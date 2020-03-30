@@ -1,13 +1,14 @@
 'use strict'
-let hashTable = require('./HashTable');
-let hashable = require('./Hashable');
-let keyValue = require('./KeyValueHash');
+let hashTable = require('./HashTable.js');
+let hashable = require('./Hashable.js');
+let keyValue = require('./KeyValueHash.js');
 
 class Dictionary
 {
+    #_table;
     constructor()
     {
-        this._table = new hashTable(1000); // create a hashtable of fixed size (1000)
+        this.#_table = new hashTable(1000); // create a hashtable of fixed size (1000)
     }
 
     /*put
@@ -20,13 +21,13 @@ class Dictionary
         if(k instanceof hashable)
         {
             let key = new keyValue(k,v);
-            if(!(this._table.contains(key))) // does not contain then add
+            if(!(this.#_table.contains(key))) // does not contain then add
             {
-                this._table.add(key);
+                this.#_table.add(key);
             }
             else // replace the value with v
             {
-                this._table.get(key).val = v;
+                this.#_table.get(key).val = v;
             }
         }
         else
@@ -43,9 +44,10 @@ class Dictionary
     {
         if(k instanceof hashable)
         {
-            if(this._table.contains(x))
+            let key = new keyValue(k,0);
+            if(this.#_table.contains(key))
             {
-                return this._table.get(x).value;
+                return this.#_table.get(key).value;
             }
             else
             {
@@ -65,9 +67,10 @@ class Dictionary
     contains(x)
     {
         let isThere = false;
-        if(k instanceof hashable)
+        if(x instanceof hashable)
         {
-            if(this._table.contains(x))
+            let key = new keyValue(x,0);
+            if(this.#_table.contains(key))
             {
                 isThere = true;
             }
@@ -84,7 +87,7 @@ class Dictionary
      */
     isEmpty()
     {
-        return this._table.isEmpty();
+        return this.#_table.isEmpty();
     }// end isEmpty
 }// end class
 
