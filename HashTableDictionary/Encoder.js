@@ -43,7 +43,7 @@ class Encoder
 
             this._myDictionary.put(this.temp,this.number);
 
-            // fs.appendFileSync(this.output, (this._myDictionary.get(new StringHash(this.last_key)))+"\n");
+            fs.appendFileSync(this.output, (this._myDictionary.get(new StringHash(this.last_key)))+"\n");
             fs.appendFile(this.output, index);
 
             this.curr_key = this.curr_key.charAt(this.curr_key.length-1);
