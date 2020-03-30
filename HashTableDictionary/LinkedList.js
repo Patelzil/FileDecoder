@@ -23,16 +23,17 @@ class LinkedList
      *Purpose - search for the item in the linked list
      *@param data - item to be searched
      */
-    search(data)
+    search(newData)
     {
         let curr = this.#_head;
-        let found = false
-        let returnVal;
+        let found = false; // for loop condition
+        let returnVal = null;
 
         while(curr != null && !found)
         {
-            if(curr.value.equals(data))
+            if(curr.data.equals(newData))
             {
+                returnVal = curr.data;
                 found = true;
             }
             else
@@ -40,16 +41,6 @@ class LinkedList
                 curr = curr.next;
             }
         }
-
-        if(curr != null)
-        {
-            returnVal = curr.value;
-        }
-        else
-        {
-            returnVal = null;
-        }
-
         return returnVal;
     }// end search
 
@@ -63,7 +54,7 @@ class LinkedList
         let curr = this.#_head;
 
         // search for the key
-        while((curr != null) && !(curr.value.equals(data)))
+        while((curr != null) && !(curr.data.equals(data)))
         {
             prev = curr;
             curr = curr.next;
@@ -89,7 +80,7 @@ class LinkedList
     isEmpty()
     {
         return this.#_head == null;
-    }
+    }// end isEmpty
 
     print() 
     { 
@@ -97,7 +88,7 @@ class LinkedList
         let curr = this.#_head;
         while (curr != null) 
         { 
-            out += curr.value + " ";
+            out += curr.data.key.value + " ";
             curr = curr.next;
             
         }

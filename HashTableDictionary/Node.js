@@ -1,17 +1,17 @@
 class Node 
 {
-    #_value;
+    #_data;
     #_next;
     
-    constructor(value,next) 
+    constructor(data,next) 
     {
-        this.#_value = value;
+        this.#_data = data;
         this.#_next = next;
     }    
 
-    get value() 
+    get data() 
     {
-        return this.#_value;
+        return this.#_data;
     }
 
     get next()
@@ -23,7 +23,6 @@ class Node
     {
         this.#_next = theNext;
     }
-
 }
 
 module.exports = Node;

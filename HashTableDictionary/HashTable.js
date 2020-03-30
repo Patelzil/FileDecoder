@@ -50,7 +50,7 @@ class HashTable
             }
             else
             {
-                return myValue.value;
+                return myValue;
             }
         }
         else
@@ -117,6 +117,14 @@ class HashTable
 
         return empty;
     }// end isEmpty
+
+    print()
+    {
+        for(let i=0; i<this.#_myArray.length; i++)
+        {
+            this.#_myArray[i].print();
+        }
+    }
 }// end class
 
 module.exports = HashTable;

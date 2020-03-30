@@ -26,7 +26,7 @@ class Dictionary
             }
             else // replace the value with v
             {
-                this.table.get(key).val = v;
+                this.table.get(key).value = v;
             }
         }
         else
@@ -65,21 +65,21 @@ class Dictionary
      */
     contains(x)
     {
-        // let isThere = false;
+        let isThere = false;
         if(x instanceof hashable)
         {
-             let key = new keyValue(x,0);
+            let key = new keyValue(x,0);
             // if(this.table.contains(key))
             // {
             //     isThere = true;
             // }
-            return this.table.contains(key);
+            isThere = this.table.contains(key);
         }
         else
         {
             throw new Error("Key should be of type hashable.");
         }
-        // return isThere;
+        return isThere;
     }// end contains
 
     /* isEmpty
@@ -89,6 +89,11 @@ class Dictionary
     {
         return this.table.isEmpty();
     }// end isEmpty
+
+    // print()
+    // {
+    //     this.table.print();
+    // }
 }// end class
 
 module.exports = Dictionary;
