@@ -27,9 +27,9 @@ class KeyValueHash extends Hashable
         return this._value;
     }
 
-    set val(newKey)
+    set value(newValue)
     {
-        this._value = newKey;
+        this._value = newValue;
     }
 
     /* hashVal
@@ -47,15 +47,12 @@ class KeyValueHash extends Hashable
      */
     equals(x)
     {
-        let isEqual;
+        let isEqual = false;
         if(x instanceof KeyValueHash)
         {
-            isEqual = this._key === x._key; // equal if the keys are both the same
+            isEqual = (this._key === x._key); // equal if the keys are both the same
         }
-        else
-        {
-            isEqual = false;
-        }
+        
         return isEqual;
     }// end equals
 }// end class

@@ -20,7 +20,7 @@ class StringHash extends Hashable
     hashVal()
     {
         let size = this.strVal.length;
-        let value = -1; // return value
+        let value = 0; // return value
         let prime = 13; // a prime number of my choice
 
         for(let i = 0; i < size; i++)
@@ -41,7 +41,7 @@ class StringHash extends Hashable
         let isEqual;
         if(x instanceof StringHash)
         {
-            isEqual = this.value === x.value;
+            isEqual = (this.value === x.value);
         }
         else
         {

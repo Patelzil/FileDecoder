@@ -5,10 +5,9 @@ let keyValue = require('./KeyValueHash.js');
 
 class Dictionary
 {
-    #_table;
     constructor()
     {
-        this.#_table = new hashTable(1000); // create a hashtable of fixed size (1000)
+        this.table = new hashTable(1000); // create a hashtable of fixed size (1000)
     }
 
     /*put
@@ -21,13 +20,13 @@ class Dictionary
         if(k instanceof hashable)
         {
             let key = new keyValue(k,v);
-            if(!(this.#_table.contains(key))) // does not contain then add
+            if(!(this.table.contains(key))) // does not contain then add
             {
-                this.#_table.add(key);
+                this.table.add(key);
             }
             else // replace the value with v
             {
-                this.#_table.get(key).val = v;
+                this.table.get(key).val = v;
             }
         }
         else
@@ -45,9 +44,9 @@ class Dictionary
         if(k instanceof hashable)
         {
             let key = new keyValue(k,0);
-            if(this.#_table.contains(key))
+            if(this.table.get(key).equals(key))
             {
-                return this.#_table.get(key).value;
+                return this.table.get(key).value;
             }
             else
             {
@@ -66,20 +65,21 @@ class Dictionary
      */
     contains(x)
     {
-        let isThere = false;
+        // let isThere = false;
         if(x instanceof hashable)
         {
-            let key = new keyValue(x,0);
-            if(this.#_table.contains(key))
-            {
-                isThere = true;
-            }
+             let key = new keyValue(x,0);
+            // if(this.table.contains(key))
+            // {
+            //     isThere = true;
+            // }
+            return this.table.contains(key);
         }
         else
         {
             throw new Error("Key should be of type hashable.");
         }
-        return isThere;
+        // return isThere;
     }// end contains
 
     /* isEmpty
@@ -87,7 +87,7 @@ class Dictionary
      */
     isEmpty()
     {
-        return this.#_table.isEmpty();
+        return this.table.isEmpty();
     }// end isEmpty
 }// end class
 

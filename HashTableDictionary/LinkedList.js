@@ -26,13 +26,31 @@ class LinkedList
     search(data)
     {
         let curr = this.#_head;
+        let found = false
+        let returnVal;
 
-        while(curr != null && !curr.value.equals(data))
+        while(curr != null && !found)
         {
-            curr = curr.next;
+            if(curr.value.equals(data))
+            {
+                found = true;
+            }
+            else
+            {
+                curr = curr.next;
+            }
         }
 
-        return curr;
+        if(curr != null)
+        {
+            returnVal = curr.value;
+        }
+        else
+        {
+            returnVal = null;
+        }
+
+        return returnVal;
     }// end search
 
     /*delete

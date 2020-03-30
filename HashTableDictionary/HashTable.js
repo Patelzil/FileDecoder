@@ -44,7 +44,7 @@ class HashTable
             let index = x.hashVal() % this.#_myArray.length;
             let myValue = this.#_myArray[index].search(x);
 
-            if(myValue ==  null)
+            if(myValue == null)
             {
                 throw new Error("Item searched not found in the table.");
             }
