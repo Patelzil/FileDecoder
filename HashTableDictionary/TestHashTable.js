@@ -2,9 +2,10 @@
 let assert = require('assert');
 let HashTable = require('./HashTable.js');
 let Int = require('./IntHash.js');
-let String = require('./StringHash.js');
+let string = require('./StringHash.js');
 let keyValue = require('./KeyValueHash.js');
 let dictionary = require('./Dictionary.js');
+let encoder = require('./Encoder.js');
 
 function testAdd()
 {
@@ -12,7 +13,7 @@ function testAdd()
 
     let testTable = new HashTable(10);
     let testVal1 = new Int(23);
-    let testVal2 = new String("Skills");
+    let testVal2 = new string("Skills");
     let testVal3 = new keyValue(testVal2, 100);
 
     testTable.add(testVal1);
@@ -152,7 +153,7 @@ function testDictionary()
     console.log("Testing dictionary...");
 
     let testDictionary = new dictionary();
-    let testKey1 = new String("z")
+    let testKey1 = new string("z")
     let testKey2 = new Int(18);
 
     assert(testDictionary.isEmpty(), "Dictionary should be empty.");
@@ -184,6 +185,9 @@ function main()
     testContains();
     testIsEmpty();
     testDictionary();
+
+    let newfile = new encoder("C:\\Users\\Lenovo\\Desktop\\COMP2150\\Assignments\\A4\\HashTableDictionary\\sample.txt");
+    newfile.encode();
 }// end main
 
 main();
