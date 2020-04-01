@@ -1,3 +1,12 @@
+// CLASS: Hashable
+//
+// Author: Patel Zil, 7876456
+//
+// REMARKS: Implements Hashable object with abstract methods
+//          to be implemented by the subclasses
+//
+//-----------------------------------------
+
 'use strict';
 
 class Hashable

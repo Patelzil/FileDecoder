@@ -1,3 +1,12 @@
+// CLASS: Dictionary
+//
+// Author: Patel Zil, 7876456
+//
+// REMARKS: Implements a dictionary using Hash Table
+//          that stores keyValueHash object
+//
+//-----------------------------------------
+
 'use strict'
 let hashTable = require('./HashTable.js');
 let hashable = require('./Hashable.js');

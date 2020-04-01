@@ -1,3 +1,11 @@
+// CLASS: TestHashTable
+//
+// Author: Patel Zil, 7876456
+//
+// REMARKS: Tests the Hash table and dictionary
+//
+//-----------------------------------------
+
 'use strict';
 let assert = require('assert');
 let HashTable = require('./HashTable.js');

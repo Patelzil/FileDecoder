@@ -1,3 +1,13 @@
+// CLASS: KeyValueHash
+//
+// Author: Patel Zil, 7876456
+//
+// REMARKS: Subclass of Hashable class that stores
+//          hashable key(int or string) and a value
+//          associated with the key
+//
+//-----------------------------------------
+
 'use strict';
 let Hashable = require('./Hashable');
 

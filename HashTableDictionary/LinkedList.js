@@ -1,3 +1,11 @@
+// CLASS: LinkedList
+//
+// Author: Patel Zil, 7876456
+//
+// REMARKS: Implements a linked list. (used by Hash Table)
+//
+//-----------------------------------------
+
 'use strict';
 let Node = require('./Node.js')
 

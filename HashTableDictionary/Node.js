@@ -1,3 +1,11 @@
+// CLASS: Node
+//
+// Author: Patel Zil, 7876456
+//
+// REMARKS: Implements Node
+//
+//-----------------------------------------
+
 class Node 
 {
     #_data;

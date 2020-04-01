@@ -1,3 +1,13 @@
+// CLASS: Encoder
+//
+// Author: Patel Zil, 7876456
+//
+// REMARKS: reads in the file to be compresses
+//          and outputs the compressed data to a 
+//          .lzw file
+//
+//-----------------------------------------
+
 'use strict';
 let Dictionary = require('./Dictionary.js');
 let StringHash = require('./StringHash.js');

@@ -1,3 +1,11 @@
+// CLASS: HashTable
+//
+// Author: Patel Zil, 7876456
+//
+// REMARKS: Implements Hash Table using separate chaining.
+//
+//-----------------------------------------
+
 'use strict';
 let LinkedList = require('./LinkedList.js');
 let Hashable = require('./Hashable.js');

@@ -1,3 +1,11 @@
+// CLASS: StringHash
+//
+// Author: Patel Zil, 7876456
+//
+// REMARKS: Subclass of Hashable class that stores a string
+//
+//-----------------------------------------
+
 'use strict';
 let Hashable = require('./Hashable');
 

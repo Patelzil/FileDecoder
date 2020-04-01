@@ -1,3 +1,11 @@
+// CLASS: IntHash
+//
+// Author: Patel Zil, 7876456
+//
+// REMARKS: Subclass of Hashable class that stores int
+//
+//-----------------------------------------
+
 'use strict';
 let Hashable = require('./Hashable');
 
