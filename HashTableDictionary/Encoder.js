@@ -18,9 +18,7 @@ class Encoder
     encode()
     {
         this.output = this._file.substr(0,this._file.lastIndexOf(".")) + ".lzw";
-        // console.log("before");
-        fs.openSync(this.output, 'w') // open the .lzw file
-        // console.log("past");
+        fs.writeFileSync(this.output, "") // open the .lzw file
         this.contents = fs.readFileSync(this._file,"utf-8");
         this.contents = this.contents.replace(/(\r\n|\n|\r)/gm,"");
 
