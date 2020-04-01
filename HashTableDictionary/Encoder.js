@@ -39,7 +39,7 @@ class Encoder
             if(!this._myDictionary.contains(this.temp))
             {
                 this._myDictionary.put(this.temp,this.number);
-                fs.appendFileSync(this.output, this.last_key + " " +(this._myDictionary.get(new StringHash(this.last_key)))+"\n");
+                fs.appendFileSync(this.output, (this._myDictionary.get(new StringHash(this.last_key)))+" ");
             }
             else // if the key is already in the dictionary then take the next character from the file and continue the algorithm
             {
@@ -48,7 +48,7 @@ class Encoder
                 this.curr_key += this.contents[this.index+1];
                 this.temp = new StringHash(this.curr_key);
                 this._myDictionary.put(this.temp,this.number);
-                fs.appendFileSync(this.output, this.last_key + " " +(this._myDictionary.get(new StringHash(this.last_key)))+"\n");
+                fs.appendFileSync(this.output, (this._myDictionary.get(new StringHash(this.last_key)))+" ");
             }
 
             this.curr_key = this.curr_key.charAt(this.curr_key.length-1);
