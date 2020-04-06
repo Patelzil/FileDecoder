@@ -66,7 +66,7 @@ class Encoder
     }// end encode
 
     /*load
-     *Purpose - fills the dictionary with the character and its LZW encoding
+     *Purpose - creates and fills the dictionary with the character and its LZW encoding
      */
     load()
     {
