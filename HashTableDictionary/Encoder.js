@@ -27,10 +27,9 @@ class Encoder
      */
     encode()
     {
-        this.output = this._file.substr(0,this._file.lastIndexOf(".")) + ".lzw";
+        this.output = this._file + ".lzw";
         fs.writeFileSync(this.output, "") // open the .lzw file
         this.contents = fs.readFileSync(this._file,"utf-8");
-        this.contents = this.contents.replace(/(\r\n|\n|\r)/gm,"");
 
         this.index = 0; // used inside the loop
         this.number = 95;
